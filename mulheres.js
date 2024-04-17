@@ -1,15 +1,22 @@
 const express = require("express") //iniciando o express
+
 const router = express.Router()
 
+
 const cors = require('cors')//trazendo o pacote cors, que permite consumir esta API no front
+
 const conectaBancoDeDados = require('./bancoDeDados') //ligando ao bd
+conectaBancoDeDados
 conectaBancoDeDados()// e aqui chamando a função para funcionar !!
 
 const Mulher = require('./mulheresModel')
 
 const app = express()//iniciando o app
+
 app.use(express.json())// le o arquivo json
+
 app.use(cors())
+
 const porta = 3333//criando a porta do servidor
 
 
